@@ -14,7 +14,10 @@
                         </div>
                     </div>
                     <div class="flex items-center">
-                        <NuxtLink to="/admin" class="text-gray-600 hover:text-gray-900">Admin</NuxtLink>
+                        <NuxtLink v-if="isAuthenticated" to="/admin" class="text-gray-600 hover:text-gray-900">
+                            Admin
+                        </NuxtLink>
+                        <NuxtLink v-else to="/login" class="text-gray-600 hover:text-gray-900">Login</NuxtLink>
                     </div>
                 </div>
             </div>
@@ -24,3 +27,8 @@
         </main>
     </div>
 </template>
+
+<script setup lang="ts">
+const authSession = useCookie('auth_session');
+const isAuthenticated = computed(() => authSession.value === 'authenticated');
+</script>

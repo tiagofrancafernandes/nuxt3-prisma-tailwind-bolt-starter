@@ -22,7 +22,8 @@
         "@pinia/nuxt": "^0.5.1",
         "@prisma/client": "^6.8.2",
         "@vueuse/core": "^10.9.0",
-        "nuxt": "^3.13.2",
+        "estree-walker": "^3.0.3",
+        "nuxt": "^3.17.4",
         "pinia": "^2.1.7",
         "zod": "^3.22.4"
     },

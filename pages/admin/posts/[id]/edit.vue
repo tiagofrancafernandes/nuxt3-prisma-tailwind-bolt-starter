@@ -63,7 +63,14 @@ const post = ref({
 });
 
 onMounted(async () => {
-    const posts = await $fetch('/api/admin/posts');
+    const posts = await $fetch('/api/admin/posts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+        },
+    });
+
     const currentPost = posts.find((p) => p.id === parseInt(route.params.id));
     if (currentPost) {
         post.value = currentPost;
@@ -74,6 +81,10 @@ onMounted(async () => {
 
 async function updatePost() {
     await $fetch(`/api/admin/posts/${route.params.id}`, {
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+        },
         method: 'PUT',
         body: post.value,
     });

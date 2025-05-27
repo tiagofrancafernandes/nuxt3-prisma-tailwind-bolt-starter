@@ -25,6 +25,12 @@
 const posts = ref([]);
 
 onMounted(async () => {
-    posts.value = await $fetch('/api/public/posts');
+    posts.value = await $fetch('/api/public/posts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+        },
+    });
 });
 </script>

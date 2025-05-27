@@ -64,6 +64,11 @@ const post = ref({
 async function createPost() {
     await $fetch('/api/admin/posts', {
         method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+        },
+        method: 'POST',
         body: post.value,
     });
     router.push('/admin/posts');

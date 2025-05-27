@@ -43,7 +43,13 @@ definePageMeta({
 const posts = ref([]);
 
 async function fetchPosts() {
-    posts.value = await $fetch('/api/admin/posts');
+    posts.value = await $fetch('/api/admin/posts', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+        },
+    });
 }
 
 async function deletePost(id) {
