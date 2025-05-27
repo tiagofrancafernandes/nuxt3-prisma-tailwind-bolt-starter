@@ -1,0 +1,16 @@
+{
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.eol": "\n",
+    "files.autoSave": "off",
+    "explorer.compactFolders": false,
+    "files.trimTrailingWhitespace": true,
+    "explorer.openEditors.visible": 9,
+    "editor.unicodeHighlight.invisibleCharacters": true,
+    "editor.emptySelectionClipboard": false,
+    "editor.inlineSuggest.enabled": true,
+    "breadcrumbs.enabled": true,
+    "[prisma]": {
+        "editor.defaultFormatter": "Prisma.prisma"
+    },
+}

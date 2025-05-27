@@ -41,10 +41,14 @@ npm run preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
+----
+#### Prisma links
+- https://www.prisma.io/docs/getting-started/quickstart-sqlite
+
 <!-- npx prisma generate && npx prisma migrate dev --name init -->
 
-npx prisma migrate reset --force && npx prisma generate
 
+**Force regenerate database and seed the data**
 ```sh
 npx prisma migrate reset --force && npx prisma generate
 ```

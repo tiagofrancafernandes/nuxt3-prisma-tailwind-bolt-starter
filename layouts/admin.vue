@@ -5,7 +5,7 @@
                 <div class="flex justify-between h-16">
                     <div class="flex">
                         <div class="flex-shrink-0 flex items-center">
-                            <span class="text-xl font-bold">Admin Panel</span>
+                            <NuxtLink to="/admin" class="text-xl font-bold">Admin Panel</NuxtLink>
                         </div>
                         <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
                             <NuxtLink to="/admin/posts" class="inline-flex items-center px-1 pt-1 text-gray-900">
@@ -13,7 +13,8 @@
                             </NuxtLink>
                         </div>
                     </div>
-                    <div class="flex items-center">
+                    <div class="flex items-center gap-x-4">
+                        <NuxtLink to="/" class="text-gray-600 hover:text-gray-900">View Site</NuxtLink>
                         <button @click="logout" class="text-gray-600 hover:text-gray-900">Logout</button>
                     </div>
                 </div>

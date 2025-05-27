@@ -9,7 +9,7 @@
                     v-model="post.title"
                     type="text"
                     required
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-1 px-2"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-1 px-2 ring-1"
                 />
             </div>
             <div>
@@ -18,7 +18,7 @@
                     id="description"
                     v-model="post.description"
                     rows="3"
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-1 px-2"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-1 px-2 ring-1"
                 />
             </div>
             <div>
@@ -27,13 +27,13 @@
                     id="content"
                     v-model="post.content"
                     rows="10"
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-1 px-2"
+                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 py-1 px-2 ring-1"
                 />
             </div>
             <div class="flex justify-end space-x-4">
                 <NuxtLink
                     to="/admin/posts"
-                    class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 py-1 px-2"
+                    class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 py-1 px-2 ring-1"
                 >
                     Cancel
                 </NuxtLink>

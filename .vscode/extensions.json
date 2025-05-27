@@ -1,0 +1,10 @@
+{
+    "recommendations": [
+        "abians.prisma-generate-uml",
+        "prisma.prisma",
+        "vue.volar",
+        "octref.vetur",
+        "ishiyama.vue-autoimport",
+        "jzmstrjp.color-the-tag-name"
+    ]
+}

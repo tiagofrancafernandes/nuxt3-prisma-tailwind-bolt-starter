@@ -16,7 +16,7 @@ const route = useRoute();
 const post = ref(null);
 
 onMounted(async () => {
-    const posts = await $fetch('/api/admin/posts');
+    const posts = await $fetch('/api/public/posts');
     post.value = posts.find((p) => p.slug === route.params.slug);
 });
 </script>

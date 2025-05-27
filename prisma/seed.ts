@@ -3,7 +3,7 @@ const prisma = new PrismaClient();
 
 async function main() {
     // Create admin user
-    await prisma.user.upsert({
+    await prisma.users.upsert({
         where: { email: 'admin@mail.com' },
         update: {},
         create: {
@@ -41,7 +41,7 @@ async function main() {
     ];
 
     for (const post of posts) {
-        await prisma.post.upsert({
+        await prisma.posts.upsert({
             where: { slug: post.slug },
             update: {},
             create: post,
