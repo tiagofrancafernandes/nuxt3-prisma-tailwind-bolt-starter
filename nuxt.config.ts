@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     compatibilityDate: '2024-04-03',
-  devTools: true,
+    devTools: false, // Temporarily disable devtools to resolve cross-origin issues
     modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt'],
     app: {
         head: {
@@ -12,6 +12,11 @@ export default defineNuxtConfig({
     tailwindcss: {
         config: {
             content: ['./components/**/*.{vue,js,ts}', './layouts/**/*.vue', './pages/**/*.vue', './app.vue'],
+        },
+    },
+    nitro: {
+        routeRules: {
+            '/api/**': { cors: true }, // Enable CORS for API routes
         },
     },
 });
