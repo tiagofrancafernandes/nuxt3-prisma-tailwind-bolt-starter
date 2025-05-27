@@ -2,7 +2,14 @@ import { prisma } from '~/server/utils/prisma';
 
 export default defineEventHandler(async (event) => {
     const method = event.method;
-    const id = parseInt(event.context.params.id);
+    let id: number | null = parseInt(event?.context?.params?.id ?? '') || null;
+
+    if (!id || id <= 0) {
+        throw createError({
+            statusCode: 422,
+            message: 'Invalid request',
+        });
+    }
 
     switch (method) {
         case 'PUT':

@@ -70,14 +70,16 @@ Use as credenciais padrão para acessar a área administrativa:
 
 Projeto criado com auxílio do [bolt.new](https://bolt.new/), [ChatGPT](https://chat.openai.com/) e [Cody](https://sourcegraph.com/cody).
 
-----
+---
+
 #### Prisma links
+
 - https://www.prisma.io/docs/getting-started/quickstart-sqlite
 
 <!-- npx prisma generate && npx prisma migrate dev --name init -->
 
-
 **Force regenerate database and seed the data**
+
 ```sh
 npx prisma migrate reset --force && npx prisma generate
 ```

@@ -9,4 +9,12 @@ node_modules
 dist
 
 dev.db
-prod.db
+prod.db*no*commit*
+*no*commit*
+*No*Commit*
+*NO*COMMIT*
+*.bkp.*
+*.bkp
+*.log
+*.out
+_ide_helper*

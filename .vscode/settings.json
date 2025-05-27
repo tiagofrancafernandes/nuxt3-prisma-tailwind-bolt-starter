@@ -12,5 +12,5 @@
     "breadcrumbs.enabled": true,
     "[prisma]": {
         "editor.defaultFormatter": "Prisma.prisma"
-    },
+    }
 }

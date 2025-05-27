@@ -10,9 +10,11 @@
         "postinstall": "nuxt prepare && prisma generate",
         "migrate": "prisma migrate dev",
         "seed": "prisma db seed",
+        "prisma:studio": "npx prisma studio",
         "prisma:seed": "npx tsx prisma/seed.ts"
     },
     "prisma": {
+        "schema": "prisma/schema.prisma",
         "seed": "npx tsx prisma/seed.ts"
     },
     "dependencies": {

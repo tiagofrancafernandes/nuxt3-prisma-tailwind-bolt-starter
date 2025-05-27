@@ -2,25 +2,33 @@ import { prisma } from '~/server/utils/prisma';
 
 export default defineEventHandler(async (event) => {
     const method = event.method;
-    const id = parseInt(event.context.params.id);
+    let id: number | null = parseInt(event?.context?.params?.id ?? '') || null;
 
     switch (method) {
-        case 'PUT':
-            const updatedPost = await readBody(event);
-            return await prisma.posts.update({
+        case 'GET':
+        case 'POST':
+            const requestData = await readBody(event);
+            id = id || parseInt(requestData?.id) || 0;
+
+            if (!id || id <= 0) {
+                throw createError({
+                    statusCode: 422,
+                    message: 'Invalid request',
+                });
+            }
+
+            let record: any = await prisma.posts.findUnique({
                 where: { id },
-                data: {
-                    title: updatedPost.title,
-                    description: updatedPost.description,
-                    content: updatedPost.content,
-                    slug: updatedPost.title.toLowerCase().replace(/\s+/g, '-'),
-                },
             });
-        case 'DELETE':
-            await prisma.posts.delete({
-                where: { id },
+
+            if (record) {
+                return record;
+            }
+
+            throw createError({
+                statusCode: 404,
+                message: 'Record not found',
             });
-            return { success: true };
         default:
             throw createError({
                 statusCode: 405,

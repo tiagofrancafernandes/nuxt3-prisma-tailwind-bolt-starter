@@ -5,18 +5,10 @@ export default defineEventHandler(async (event) => {
 
     switch (method) {
         case 'GET':
+        case 'POST':
+            const requestData = await readBody(event);
             return await prisma.posts.findMany({
                 orderBy: { createdAt: 'desc' },
-            });
-        case 'POST':
-            const post = await readBody(event);
-            return await prisma.posts.create({
-                data: {
-                    title: post.title,
-                    description: post.description,
-                    content: post.content,
-                    slug: post.title.toLowerCase().replace(/\s+/g, '-'),
-                },
             });
         default:
             throw createError({
